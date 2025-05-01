@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
           </div>
           
           <div className="lg:w-1/2 mt-12 lg:mt-0 relative animate-fadeIn animation-delay-600">
-            <div className="relative w-full max-w-md mx-auto md:max-w-lg">
+            <div className="relative w-full max-w-sm mx-auto md:max-w-lg">
               <div className="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
               <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
               <div className="absolute -bottom-16 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
                 <img 
                   src="/images/IMG_3049.png"
                   alt="Creative workspace" 
-                  className="rounded-lg shadow-2xl object-cover h-80 w-full md:h-96" 
+                  className="rounded-lg shadow-2xl object-cover h-72 w-full md:h-96" 
                 />
               </div>
             </div>
