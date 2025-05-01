@@ -4,38 +4,27 @@ import { services } from '../data/services';
 
 const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    // Initialize isDarkMode based on prefers-color-scheme or class
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const hasDarkClass = document.documentElement.classList.contains('dark');
-    return prefersDark || hasDarkClass;
-  });
+  const [isDarkMode, setIsDarkMode] = useState(
+    document.documentElement.classList.contains('dark')
+  );
 
   useEffect(() => {
-    // Function to update isDarkMode
-    const updateDarkMode = () => {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const hasDarkClass = document.documentElement.classList.contains('dark');
-      setIsDarkMode(prefersDark || hasDarkClass);
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
     };
 
-    // Initial update
-    updateDarkMode();
+    handleChange();
+    mediaQuery.addEventListener('change', handleChange);
 
-    // Listen for changes in prefers-color-scheme
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    mediaQuery.addEventListener('change', updateDarkMode);
-
-    // Observe changes to the 'dark' class on <html>
-    const observer = new MutationObserver(updateDarkMode);
+    const observer = new MutationObserver(handleChange);
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['class'],
     });
 
-    // Cleanup listeners on unmount
     return () => {
-      mediaQuery.removeEventListener('change', updateDarkMode);
+      mediaQuery.removeEventListener('change', handleChange);
       observer.disconnect();
     };
   }, []);
