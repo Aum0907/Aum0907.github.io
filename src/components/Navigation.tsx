@@ -55,7 +55,7 @@ const Navigation: React.FC = () => {
             <img
               src="/images/logo.png" // Replace with the path to your logo
               alt="Logo"
-              className="h-20 w-auto" // Keep the current logo size
+              className="h-16 md:h-20 w-auto" // Smaller logo for phone screens
             />
           </a>
 

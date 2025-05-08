@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
                 <img 
                   src="/images/IMG_3049.png" // Add your hero image path here
                   alt="Creative workspace" 
-                  className="rounded-lg shadow-2xl object-cover h-96 w-full" 
+                  className="rounded-lg shadow-2xl object-cover h-64 sm:h-80 md:h-96 w-full" // Adjusted height for smaller screens
                 />
               </div>
             </div>
