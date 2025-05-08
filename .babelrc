@@ -1,0 +1,12 @@
+{
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "safari": "11" // Adjust based on the minimum Safari version you want to support
+          }
+        }
+      ]
+    ]
+  }
