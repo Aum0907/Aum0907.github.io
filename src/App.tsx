@@ -12,7 +12,7 @@ import './animations.css';
 function App() {
   useEffect(() => {
     // Update document title
-    document.title = 'DesignStudio - Creative Design Services';
+    document.title = 'Nilkanth Creative Studio';
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

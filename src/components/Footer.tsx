@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-xl font-semibold mb-4">Aum Patel</h3>
+            <h3 className="text-xl font-semibold mb-4">Nilkanth Creative Studio</h3>
             <p className="text-gray-400 mb-4">
               Creating exceptional digital experiences that connect brands with
               their audience.
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row md:justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} Aum Patel. All rights reserved.
+              &copy; {currentYear} Nilkanth Creative Studio. All rights reserved.
             </p>
 
             <div className="flex space-x-4">
