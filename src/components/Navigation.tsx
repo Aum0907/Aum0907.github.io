@@ -4,7 +4,6 @@ import { navItems } from '../data/navigation';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -15,30 +14,14 @@ const Navigation: React.FC = () => {
   };
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setHidden(true); // Hide navbar when scrolling down
-      } else {
-        setHidden(false); // Show navbar when scrolling up
-      }
-      lastScrollY = window.scrollY;
-    };
-
-    // Check system preference
+    // Check system preference for dark mode
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setIsDark(true);
       document.documentElement.classList.add('dark');
     }
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navClasses = `fixed w-full top-0 z-50 transition-transform duration-300 ${
-    hidden ? '-translate-y-full' : 'translate-y-0'
-  } bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md`;
+  const navClasses = `fixed w-full top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md transition-transform duration-300`;
 
   return (
     <nav
